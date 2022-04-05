@@ -5,6 +5,9 @@ const ROLES = require('../config/role');
 
 // add new product record
 async function create (req, res) {
+  // console.log("debug=--------->", req)
+  // console.log("debug------------->", req.body)
+  // console.log("debug------",req.xhr)
   const { date, price, productname, userID } = req.body;
   const product = new Product ({ date, price, productname, user: userID});
   product.save()
