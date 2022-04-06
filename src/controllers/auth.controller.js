@@ -5,6 +5,7 @@ const User = mongoose.model('User');
 
 function signup(req, res) {
 	const { firstName, lastName, email, password } = req.body;
+	console.log("debug------------->", req.body)
 	try {
 		const user = new User({ firstName, lastName, email, password});
 	  user.save();
